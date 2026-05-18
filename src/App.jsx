@@ -10,7 +10,7 @@ function App() {
           <Shield className="police-logo" color="#D4AF37" size={40} />
           <div className="logo-text">
             <h1>Siddipet Police</h1>
-            <span>UDYOGA MITRA 2026</span>
+            <span>UDYOGA MITRA</span>
           </div>
         </div>
         <div className="nav-actions">
@@ -32,7 +32,7 @@ function App() {
           </p>
           <div className="hero-actions">
             <a href="https://careers.applywizz.ai/signup" className="btn btn-accent">
-              Register for Job Mela <ArrowRight size={20} style={{marginLeft: '8px'}} />
+              Register for Jobs <ArrowRight size={20} style={{marginLeft: '8px'}} />
             </a>
           </div>
         </div>
