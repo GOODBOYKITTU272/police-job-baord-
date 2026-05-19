@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Shield, ArrowRight, HeartHandshake, Users, ChevronRight, Award, Globe } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Shield, ArrowRight, HeartHandshake, Users, ChevronRight, Award, Globe, ChevronLeft } from 'lucide-react';
 
 const translations = {
   en: {
@@ -80,6 +80,24 @@ function App() {
     setLang(lang === 'en' ? 'te' : 'en');
   };
 
+  // Carousel Logic
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [
+    "/hero1.jpeg",
+    "/hero2.jpeg",
+    "/hero3.jpeg"
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000); // automatically move every 5 seconds
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+
   return (
     <div className="app-container">
       {/* Navbar */}
@@ -107,7 +125,39 @@ function App() {
         </div>
       </nav>
 
-      {/* Hero Content - Split Layout Without Image */}
+      {/* Photo Carousel */}
+      <section className="carousel-section">
+        <div className="carousel-container">
+          {slides.map((slide, index) => (
+            <div 
+              key={index} 
+              className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}
+            >
+              <img src={slide} alt={`Slide ${index + 1}`} />
+            </div>
+          ))}
+          
+          <button className="carousel-btn prev" onClick={prevSlide}>
+            <ChevronLeft size={32} />
+          </button>
+          <button className="carousel-btn next" onClick={nextSlide}>
+            <ChevronRight size={32} />
+          </button>
+
+          <div className="carousel-indicators">
+            {slides.map((_, index) => (
+              <button 
+                key={index} 
+                className={`indicator ${index === currentSlide ? 'active' : ''}`}
+                onClick={() => setCurrentSlide(index)}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Hero Content - Split Layout Without Image (Now pushed below carousel) */}
       <section className="hero">
 
         {/* Left Column: Main Messaging */}

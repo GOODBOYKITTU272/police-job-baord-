@@ -156,6 +156,94 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(10, 25, 47, 0.05);
 }
 
+/* Carousel */
+.carousel-section {
+  width: 100%;
+  position: relative;
+  background: var(--bg-dark);
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  display: grid; /* Grid trick to allow auto-height with overlapping items */
+  overflow: hidden;
+}
+
+.carousel-slide {
+  grid-area: 1 / 1;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  z-index: 1;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto; /* Natural height */
+  display: block;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-btn.prev {
+  left: 2rem;
+}
+
+.carousel-btn.next {
+  right: 2rem;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: white;
+  transform: scale(1.2);
+}
+
 /* Hero Section */
 .hero {
   padding: 6rem 5%;
@@ -411,6 +499,17 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+  }
+  .carousel-btn.prev {
+    left: 1rem;
+  }
+  .carousel-btn.next {
+    right: 1rem;
+  }
+
   .navbar {
     flex-direction: column;
     gap: 1.5rem;
