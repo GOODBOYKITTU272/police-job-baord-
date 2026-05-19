@@ -84,13 +84,16 @@ function App() {
     <div className="app-container">
       {/* Navbar */}
       <nav className="navbar">
-        <div className="logo-section">
-          <img src="/telanganapolicelogo.png" alt="Telangana Police Logo" className="police-logo left-logo" />
-          <div className="logo-text">
-            <h1>{t.policeTitle}</h1>
-            <span>{t.udyogaMitra}</span>
+        <div className="logo-wrapper">
+          <span className="initiative-top-text">{t.initiative}</span>
+          <div className="logo-section">
+            <img src="/telanganapolicelogo.png" alt="Telangana Police Logo" className="police-logo left-logo" />
+            <div className="logo-text">
+              <h1>{t.policeTitle}</h1>
+              <span>{t.udyogaMitra}</span>
+            </div>
+            <img src="/siddipetpolicelogo.png" alt="Siddipet Police Logo" className="police-logo right-logo" />
           </div>
-          <img src="/siddipetpolicelogo.png" alt="Siddipet Police Logo" className="police-logo right-logo" />
         </div>
         <div className="nav-actions">
           <button
@@ -109,7 +112,6 @@ function App() {
 
         {/* Left Column: Main Messaging */}
         <div className="hero-content">
-          <div className="hero-badge">{t.initiative}</div>
           <h2>{t.heroTitle1}<br />{t.heroTitle2}</h2>
           <p className="hero-description">
             {lang === 'en' ? (

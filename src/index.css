@@ -67,6 +67,20 @@ h1, h2, h3, h4, h5, h6 {
   object-fit: contain;
 }
 
+.logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.initiative-top-text {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--applywizz-green);
+  letter-spacing: 1px;
+}
+
 .right-logo {
   transform: scale(1.4);
   transform-origin: center;
@@ -405,11 +419,14 @@ footer {
   .logo-section {
     width: 100%;
     justify-content: center;
-    flex-wrap: wrap; /* Allow wrapping on very small screens */
-    gap: 0.75rem;
+    flex-wrap: nowrap; /* Keep logos inline */
+    gap: 0.5rem;
   }
   .police-logo {
-    height: 50px; /* Scale down logos on tablet */
+    height: 40px; /* Scale down logos on tablet */
+  }
+  .right-logo {
+    transform: scale(1.3);
   }
   .nav-actions {
     width: 100%;
@@ -447,14 +464,20 @@ footer {
 
 @media (max-width: 480px) {
   .logo-text h1 {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
   }
   .logo-text span {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
   }
   
   .police-logo {
-    height: 45px; /* Scale down logos further on mobile */
+    height: 35px; /* Scale down logos further on mobile */
+  }
+  .right-logo {
+    transform: scale(1.2);
+  }
+  .initiative-top-text {
+    font-size: 0.65rem;
   }
   
   .hero {
