@@ -84,21 +84,23 @@ function App() {
     <div className="app-container">
       {/* Navbar */}
       <nav className="navbar">
+        <div className="nav-spacer"></div>
         <div className="logo-section">
-          <Shield className="police-logo" color="#D4AF37" size={40} />
+          <img src="/telanganapolicelogo.jpeg" alt="Telangana Police Logo" className="police-logo" />
           <div className="logo-text">
             <h1>{t.policeTitle}</h1>
             <span>{t.udyogaMitra}</span>
           </div>
+          <img src="/siddipetpolicelogo.jpeg" alt="Siddipet Police Logo" className="police-logo" />
         </div>
         <div className="nav-actions">
-          <button 
-            onClick={toggleLanguage} 
-            className="btn btn-outline" 
-            style={{ 
-              display: 'flex', 
-              alignItems: 'center', 
-              gap: '0.5rem', 
+          <button
+            onClick={toggleLanguage}
+            className="btn btn-outline"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
               background: 'transparent',
               color: 'var(--text-light)',
               border: '1px solid var(--glass-border)',
@@ -119,27 +121,27 @@ function App() {
 
       {/* Hero Content - Split Layout Without Image */}
       <section className="hero">
-        
+
         {/* Left Column: Main Messaging */}
         <div className="hero-content">
           <div className="hero-badge">{t.initiative}</div>
-          <h2>{t.heroTitle1}<br/>{t.heroTitle2}</h2>
+          <h2>{t.heroTitle1}<br />{t.heroTitle2}</h2>
           <p className="hero-description">
             {lang === 'en' ? (
               <>
-                The Siddipet Police Department believes that true public service extends beyond safety—it means uplifting our community. 
+                The Siddipet Police Department believes that true public service extends beyond safety—it means uplifting our community.
                 <strong> Udyoga Mitra</strong> is our flagship initiative to connect local talent directly with prestigious career opportunities across India's top sectors.
               </>
             ) : (
               <>
-                సిద్దిపేట పోలీస్ శాఖ నిజమైన ప్రజా సేవ భద్రతకు మించినదని నమ్ముతుంది—దీని అర్థం మన సమాజాన్ని ఉద్ధరించడం. 
+                సిద్దిపేట పోలీస్ శాఖ నిజమైన ప్రజా సేవ భద్రతకు మించినదని నమ్ముతుంది—దీని అర్థం మన సమాజాన్ని ఉద్ధరించడం.
                 <strong> ఉద్యోగ మిత్ర</strong> భారతదేశపు అగ్రశ్రేణి రంగాలలో ప్రతిష్టాత్మకమైన కెరీర్ అవకాశాలతో స్థానిక ప్రతిభను నేరుగా అనుసంధానించే మా ప్రధాన చొరవ.
               </>
             )}
           </p>
           <div className="hero-actions">
             <a href="https://careers.applywizz.ai/signup" className="btn btn-accent">
-              {t.registerBtn} <ArrowRight size={20} style={{marginLeft: '8px'}} />
+              {t.registerBtn} <ArrowRight size={20} style={{ marginLeft: '8px' }} />
             </a>
           </div>
         </div>
@@ -168,15 +170,15 @@ function App() {
         </div>
         <div className="features-grid">
           <div className="feature-card sector-card">
-            <h4><ChevronRight color="#D4AF37"/> {t.itTitle}</h4>
+            <h4><ChevronRight color="#D4AF37" /> {t.itTitle}</h4>
             <p>{t.itDesc}</p>
           </div>
           <div className="feature-card sector-card">
-            <h4><ChevronRight color="#D4AF37"/> {t.bankTitle}</h4>
+            <h4><ChevronRight color="#D4AF37" /> {t.bankTitle}</h4>
             <p>{t.bankDesc}</p>
           </div>
           <div className="feature-card sector-card">
-            <h4><ChevronRight color="#D4AF37"/> {t.skillTitle}</h4>
+            <h4><ChevronRight color="#D4AF37" /> {t.skillTitle}</h4>
             <p>{t.skillDesc}</p>
           </div>
         </div>

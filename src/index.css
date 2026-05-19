@@ -53,16 +53,25 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 100;
 }
 
+.nav-spacer {
+  flex: 1;
+}
+
 .logo-section {
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex: 0 1 auto;
 }
 
 .police-logo {
   height: 50px;
   width: auto;
   flex-shrink: 0;
+}
+
+.logo-text {
+  text-align: center;
 }
 
 .logo-text h1 {
@@ -82,6 +91,8 @@ h1, h2, h3, h4, h5, h6 {
 .nav-actions {
   display: flex;
   gap: 1rem;
+  flex: 1;
+  justify-content: flex-end;
 }
 
 .btn {
@@ -376,6 +387,9 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .nav-spacer {
+    display: none;
+  }
   .navbar {
     flex-direction: column;
     gap: 1.5rem;
