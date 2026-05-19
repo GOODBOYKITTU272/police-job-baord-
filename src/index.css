@@ -45,40 +45,38 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 5%;
-  background: rgba(2, 12, 27, 0.85);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--glass-border);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
-}
-
-.nav-spacer {
-  flex: 1;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .logo-section {
   display: flex;
   align-items: center;
   gap: 1rem;
-  flex: 0 1 auto;
 }
 
 .police-logo {
-  height: 50px;
+  height: 60px;
   width: auto;
   flex-shrink: 0;
+  object-fit: contain;
 }
 
-.logo-text {
-  text-align: center;
+.right-logo {
+  transform: scale(1.4);
+  transform-origin: center;
 }
 
 .logo-text h1 {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 1px;
-  color: var(--text-light);
+  color: var(--primary-blue);
   text-transform: uppercase;
 }
 
@@ -91,8 +89,6 @@ h1, h2, h3, h4, h5, h6 {
 .nav-actions {
   display: flex;
   gap: 1rem;
-  flex: 1;
-  justify-content: flex-end;
 }
 
 .btn {
@@ -130,6 +126,20 @@ h1, h2, h3, h4, h5, h6 {
 .btn-accent:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--primary-blue);
+  border: 1px solid rgba(10, 25, 47, 0.2);
+  margin-right: 0.5rem;
+}
+
+.lang-btn:hover {
+  background: rgba(10, 25, 47, 0.05);
 }
 
 /* Hero Section */
@@ -387,9 +397,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .nav-spacer {
-    display: none;
-  }
   .navbar {
     flex-direction: column;
     gap: 1.5rem;
@@ -398,6 +405,11 @@ footer {
   .logo-section {
     width: 100%;
     justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping on very small screens */
+    gap: 0.75rem;
+  }
+  .police-logo {
+    height: 50px; /* Scale down logos on tablet */
   }
   .nav-actions {
     width: 100%;
@@ -439,6 +451,10 @@ footer {
   }
   .logo-text span {
     font-size: 0.75rem;
+  }
+  
+  .police-logo {
+    height: 45px; /* Scale down logos further on mobile */
   }
   
   .hero {

@@ -84,33 +84,18 @@ function App() {
     <div className="app-container">
       {/* Navbar */}
       <nav className="navbar">
-        <div className="nav-spacer"></div>
         <div className="logo-section">
-          <img src="/telanganapolicelogo.jpeg" alt="Telangana Police Logo" className="police-logo" />
+          <img src="/telanganapolicelogo.png" alt="Telangana Police Logo" className="police-logo left-logo" />
           <div className="logo-text">
             <h1>{t.policeTitle}</h1>
             <span>{t.udyogaMitra}</span>
           </div>
-          <img src="/siddipetpolicelogo.jpeg" alt="Siddipet Police Logo" className="police-logo" />
+          <img src="/siddipetpolicelogo.png" alt="Siddipet Police Logo" className="police-logo right-logo" />
         </div>
         <div className="nav-actions">
           <button
             onClick={toggleLanguage}
-            className="btn btn-outline"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              background: 'transparent',
-              color: 'var(--text-light)',
-              border: '1px solid var(--glass-border)',
-              padding: '0.75rem 1.25rem',
-              marginRight: '0.5rem',
-              cursor: 'pointer',
-              borderRadius: '8px',
-              fontFamily: 'Outfit, sans-serif',
-              fontWeight: '600'
-            }}
+            className="btn lang-btn"
           >
             <Globe size={18} /> {lang === 'en' ? 'తెలుగు' : 'English'}
           </button>
