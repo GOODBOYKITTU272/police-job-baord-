@@ -52,7 +52,7 @@ const translations = {
     safeTransDesc: "Powered by Applywizz AI, the entire recruitment pipeline is merit-based, lightning-fast, and monitored by the police department.",
     techPartner: "Technology Partner:",
     copyright: "© 2026 Siddipet Police Department. All rights reserved.",
-    helpdesk: "Helpdesk: 100"
+    helpdesk: "Helpdesk: 8712667100"
   },
   te: {
     policeTitle: "సిద్దిపేట పోలీస్",
@@ -134,7 +134,7 @@ function App() {
                 <span>{t.udyogaMitra}</span>
               </div>
             </div>
-            <img src="/siddipetpolicelogo.png" alt="Siddipet Police Logo" className="police-logo right-logo" />
+            <img src="/surakshalogo.png" alt="Siddipet Police Logo" className="police-logo right-logo" />
           </div>
         </div>
         <div className="nav-actions">
@@ -293,19 +293,21 @@ function App() {
           <div className="powered-by">
             {t.techPartner} <a href="https://www.applywizz.ai/" target="_blank" rel="noopener noreferrer">Applywizz AI</a>
           </div>
-          <div className="social-links">
-            <a href="https://x.com/siddipetcp" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="X / Twitter">
-              <TwitterIcon />
-            </a>
-            <a href="https://www.instagram.com/siddipet_police_commisionerate?igsh=MWZzaDV2NGY0MGZpag==" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram">
-              <InstagramIcon />
-            </a>
-            <a href="https://www.facebook.com/share/1HmzZ8JS2J/" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Facebook">
-              <FacebookIcon />
-            </a>
-          </div>
-          <div>
-            {t.copyright}
+          <div className="footer-center">
+            <div>
+              {t.copyright}
+            </div>
+            <div className="social-links">
+              <a href="https://x.com/siddipetcp" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="X / Twitter">
+                <TwitterIcon />
+              </a>
+              <a href="https://www.instagram.com/siddipet_police_commisionerate?igsh=MWZzaDV2NGY0MGZpag==" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram">
+                <InstagramIcon />
+              </a>
+              <a href="https://www.facebook.com/share/1HmzZ8JS2J/" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Facebook">
+                <FacebookIcon />
+              </a>
+            </div>
           </div>
           <div>
             {t.helpdesk} | support@applywizz.ai
