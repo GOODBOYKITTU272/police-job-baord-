@@ -134,7 +134,7 @@ function App() {
                 <span>{t.udyogaMitra}</span>
               </div>
             </div>
-            <img src="/surakshalogo.png" alt="Siddipet Police Logo" className="police-logo right-logo" />
+            <img src="/surakshalogo1.png" alt="Siddipet Police Logo" className="police-logo right-logo" />
           </div>
         </div>
         <div className="nav-actions">
