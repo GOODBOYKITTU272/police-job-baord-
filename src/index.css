@@ -24,12 +24,17 @@ body {
   color: var(--text-light);
   line-height: 1.6;
   overflow-x: hidden;
-  background-image: 
+  background-image:
     radial-gradient(circle at 15% 50%, rgba(10, 25, 47, 0.4), transparent 25%),
     radial-gradient(circle at 85% 30%, rgba(17, 34, 64, 0.4), transparent 25%);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Outfit', sans-serif;
 }
 
@@ -44,14 +49,14 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 5%;
-  background: rgba(255, 255, 255, 0.95);
+  padding: 1.2rem 5%;
+  background: linear-gradient(135deg, #1565C0 0%, #0D47A1 50%, #1976D2 100%);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #FFD700;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 24px rgba(13, 71, 161, 0.6);
 }
 
 .logo-section {
@@ -61,43 +66,69 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .police-logo {
-  height: 60px;
-  width: auto;
+  height: 100px;
+  width: 100px;
   flex-shrink: 0;
   object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
 }
 
 .logo-wrapper {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.25rem;
 }
 
 .initiative-top-text {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  color: var(--applywizz-green);
-  letter-spacing: 1px;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+.logo-center {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .right-logo {
-  transform: scale(1.4);
-  transform-origin: center;
+  height: 150px;
+  width: 150px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .logo-text h1 {
-  font-size: 1.25rem;
-  font-weight: 800;
-  letter-spacing: 1px;
-  color: var(--primary-blue);
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  color: #ffffff;
   text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+  margin: 0;
 }
 
+
+
 .logo-text span {
-  font-size: 0.85rem;
-  color: var(--accent-gold);
-  font-weight: 500;
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+  margin: 0;
 }
 
 .nav-actions {
@@ -146,28 +177,36 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: transparent;
-  color: var(--primary-blue);
-  border: 1px solid rgba(10, 25, 47, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
   margin-right: 0.5rem;
 }
 
 .lang-btn:hover {
-  background: rgba(10, 25, 47, 0.05);
+  background: rgba(255, 255, 255, 0.25);
 }
 
 /* Carousel */
+
 .carousel-section {
   width: 100%;
   position: relative;
   background: var(--bg-dark);
+  padding: 2rem 5%;
+  display: flex;
+  justify-content: center;
 }
 
 .carousel-container {
   position: relative;
   width: 100%;
-  display: grid; /* Grid trick to allow auto-height with overlapping items */
+  max-width: 1100px;
+  aspect-ratio: 14 / 7;
+  display: grid;
   overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
 .carousel-slide {
@@ -176,6 +215,7 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
   z-index: 1;
+  overflow: hidden;
 }
 
 .carousel-slide.active {
@@ -185,8 +225,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .carousel-slide img {
   width: 100%;
-  height: auto; /* Natural height */
+  height: 100%;
   display: block;
+  object-fit: cover;
+  object-position: center;
 }
 
 .carousel-btn {
@@ -471,6 +513,54 @@ footer {
   opacity: 0.8;
 }
 
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.social-icon:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+  color: #FFD700;
+  border-color: #FFD700;
+}
+
+.commissioner-name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.comm-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #E1306C;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.comm-social-link:hover {
+  transform: scale(1.2);
+  opacity: 0.85;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .hero {
@@ -478,23 +568,219 @@ footer {
     gap: 3rem;
     padding: 4rem 5%;
   }
+
   .hero-content {
     text-align: center;
     margin: 0 auto;
   }
+
   .hero-content h2 {
     font-size: 3rem;
   }
+
   .hero-description {
     margin-left: auto;
     margin-right: auto;
   }
+
   .hero-actions {
     justify-content: center;
   }
+
   .status-card {
     max-width: 700px;
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 4%;
+  }
+
+  .logo-wrapper {
+    width: 100%;
+  }
+
+  .logo-section {
+    width: 100%;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .police-logo {
+    height: 55px;
+    width: 55px;
+  }
+
+  .right-logo {
+    height: 70px;
+    width: 70px;
+  }
+
+  .logo-center {
+    align-items: center;
+  }
+
+  .initiative-top-text {
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  .logo-text {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1rem;
+  }
+
+  .logo-text h1 {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .logo-text span {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .nav-actions {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 320px;
+    font-size: 0.85rem;
+    padding: 0.6rem 1rem;
+  }
+
+  /* Carousel */
+  .carousel-section {
+    padding: 1rem 3%;
+  }
+
+  .carousel-container {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .carousel-btn.prev {
+    left: 0.5rem;
+  }
+
+  .carousel-btn.next {
+    right: 0.5rem;
+  }
+
+  /* Hero */
+  .hero-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  /* Features */
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Commissioner card */
+  .commissioner-name-row {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  /* Footer */
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Navbar */
+  .navbar {
+    padding: 0.75rem 3%;
+  }
+
+  .police-logo {
+    height: 45px;
+    width: 45px;
+  }
+
+  .right-logo {
+    height: 58px;
+    width: 58px;
+  }
+
+  .logo-text h1 {
+    font-size: 0.95rem;
+  }
+
+  .logo-text span {
+    font-size: 0.75rem;
+  }
+
+  .initiative-top-text {
+    font-size: 0.55rem;
+    letter-spacing: 0.5px;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 2.5rem 4%;
+  }
+
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+
+  /* Commissioner card */
+  .status-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .card-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .commissioner-quote {
+    font-size: 0.95rem;
+  }
+
+  /* Footer */
+  .footer-content {
+    gap: 1rem;
+  }
+
+  .social-icon {
+    width: 32px;
+    height: 32px;
   }
 }
 
@@ -503,57 +789,75 @@ footer {
     width: 40px;
     height: 40px;
   }
+
   .carousel-btn.prev {
     left: 1rem;
   }
+
   .carousel-btn.next {
     right: 1rem;
   }
 
   .navbar {
     flex-direction: column;
-    gap: 1.5rem;
-    padding: 1.5rem 5%;
+    gap: 1rem;
+    padding: 1rem 5%;
   }
+
   .logo-section {
     width: 100%;
     justify-content: center;
-    flex-wrap: nowrap; /* Keep logos inline */
+    flex-wrap: nowrap;
+    /* Keep logos inline */
     gap: 0.5rem;
   }
+
   .police-logo {
-    height: 40px; /* Scale down logos on tablet */
+    height: 65px;
+    /* Scale down logos on tablet */
   }
+
   .right-logo {
     transform: scale(1.3);
   }
+
+  .initiative-top-text {
+    font-size: 0.85rem;
+  }
+
+  .logo-text h1 {
+    font-size: 1.4rem;
+  }
+
   .nav-actions {
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.75rem;
   }
+
   .btn {
     width: 100%;
     max-width: 350px;
   }
-  
+
   .hero-content h2 {
     font-size: 2.5rem;
   }
+
   .hero-description {
     font-size: 1rem;
   }
-  
+
   .section-header h2 {
     font-size: 2rem;
   }
-  
+
   .features-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .footer-content {
     flex-direction: column;
     text-align: center;
@@ -563,38 +867,42 @@ footer {
 
 @media (max-width: 480px) {
   .logo-text h1 {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
   }
+
   .logo-text span {
-    font-size: 0.65rem;
+    font-size: 0.85rem;
   }
-  
+
   .police-logo {
-    height: 35px; /* Scale down logos further on mobile */
+    height: 55px;
+    /* Scale down logos further on mobile */
   }
+
   .right-logo {
     transform: scale(1.2);
   }
+
   .initiative-top-text {
-    font-size: 0.65rem;
+    font-size: 0.75rem;
   }
-  
+
   .hero {
     padding: 3rem 5%;
   }
-  
+
   .hero-content h2 {
     font-size: 2rem;
   }
-  
+
   .status-card {
     padding: 2rem 1.5rem;
   }
-  
+
   .card-header h3 {
     font-size: 1.25rem;
   }
-  
+
   .commissioner-quote {
     font-size: 1rem;
   }
