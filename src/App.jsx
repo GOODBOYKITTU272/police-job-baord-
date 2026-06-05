@@ -63,7 +63,8 @@ const translations = {
       "Siddipet Police Commissionerate shall not be responsible or liable for any employment-related disputes, fraud, misrepresentation, breach of contract, labour disputes, financial claims, or legal proceedings arising between employers and job seekers.",
       "Any dispute arising between employers and job seekers shall be resolved by the concerned parties, and Siddipet Police Commissionerate shall not be made a party to such disputes.",
       "This MoU does not create any employer-employee relationship between Siddipet Police Commissionerate, ApplyWizz Technologies Pvt. Ltd., employers, and job seekers."
-    ]
+    ],
+    marqueeText: "Siddipet Police Udyogamithra – Helping Hands for Employment. Register free and connect with genuine job opportunities. Your career journey starts here!"
   },
   te: {
     policeTitle: "సిద్దిపేట పోలీస్",
@@ -108,7 +109,8 @@ const translations = {
       "యజమానులు మరియు ఉద్యోగార్థుల మధ్య తలెత్తే ఏవైనా ఉపాధి సంబంధిత వివాదాలు, మోసం, తప్పుడు ప్రాతినిధ్యం, కాంట్రాక్ట్ ఉల్లంఘన, కార్మిక వివాదాలు, ఆర్థిక వాదనలు లేదా చట్టపరమైన చర్యలకు సిద్దిపేట పోలీస్ కమీషనరేట్ బాధ్యత వహించదు.",
       "యజమానులు మరియు ఉద్యోగార్థుల మధ్య తలెత్తే ఏదైనా వివాదాన్ని సంబంధిత పార్టీలే పరిష్కరించుకోవాలి మరియు సిద్దిపేట పోలీస్ కమీషనరేట్‌ను అటువంటి వివాదాలకు భాగస్వామిగా చేయరాదు.",
       "ఈ అవగాహన ఒప్పందం (MoU) సిద్దిపేట పోలీస్ కమీషనరేట్, అప్లైవిజ్ టెక్నాలజీస్ ప్రైవేట్ లిమిటెడ్, యజమానులు మరియు ఉద్యోగార్థుల మధ్య ఎలాంటి యజమాని-ఉద్యోగి సంబంధాన్ని సృష్టించదు."
-    ]
+    ],
+    marqueeText: "సిద్దిపేట పోలీస్ ఉద్యోగమిత్ర – ఉపాధికి చేయూత. ఉచితంగా నమోదు చేసుకోండి మరియు అసలైన ఉద్యోగ అవకాశాలతో కనెక్ట్ అవ్వండి. మీ కెరీర్ ప్రయాణం ఇక్కడే ప్రారంభమవుతుంది!"
   }
 };
 
@@ -187,6 +189,13 @@ function App() {
           <button onClick={handleOpenTerms} className="btn btn-accent">{t.jobSeekerSignUp}</button>
         </div>
       </nav>
+
+      {/* Scrolling Marquee */}
+      <div className="marquee-container">
+        <div className="marquee-content">
+          <span>{t.marqueeText}</span>
+        </div>
+      </div>
 
       {/* Photo Carousel */}
       <section className="carousel-section">
