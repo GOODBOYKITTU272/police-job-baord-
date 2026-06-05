@@ -62,7 +62,7 @@ const translations = {
       "Verification of credentials, recruitment, appointment, salary payment, and service conditions shall be the sole responsibility of the concerned employer and candidate.",
       "Siddipet Police Commissionerate shall not be responsible or liable for any employment-related disputes, fraud, misrepresentation, breach of contract, labour disputes, financial claims, or legal proceedings arising between employers and job seekers.",
       "Any dispute arising between employers and job seekers shall be resolved by the concerned parties, and Siddipet Police Commissionerate shall not be made a party to such disputes.",
-      "This MoU does not create any employer-employee relationship between Siddipet Police Commissionerate, ApplyWizz Technologies Pvt. Ltd., employers, and job seekers."
+      "This MoU does not create any employer-employee relationship between Siddipet Police Commissionerate, Enougher ApplyWizz  Pvt. Ltd., employers, and job seekers."
     ],
     marqueeText: "Siddipet Police Udyogamithra – Helping Hands for Employment. Register free and connect with genuine job opportunities. Your career journey starts here!"
   },
