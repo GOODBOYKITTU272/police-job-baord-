@@ -859,6 +859,10 @@ footer {
     font-size: 1.4rem;
   }
 
+  .logo-text span {
+    font-size: 1.4rem;
+  }
+
   .nav-actions {
     width: 100%;
     justify-content: center;
@@ -901,7 +905,7 @@ footer {
   }
 
   .logo-text span {
-    font-size: 0.85rem;
+    font-size: 1.1rem;
   }
 
   .police-logo {
