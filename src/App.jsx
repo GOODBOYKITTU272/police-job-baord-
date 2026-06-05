@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, ArrowRight, HeartHandshake, Users, ChevronRight, Award, Globe, ChevronLeft } from 'lucide-react';
+import { Shield, ArrowRight, HeartHandshake, Users, ChevronRight, Award, Globe, ChevronLeft, X, Mail } from 'lucide-react';
 
 const TwitterIcon = () => (
   <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
@@ -53,7 +53,17 @@ const translations = {
     safeTransDesc: "Powered by Applywizz AI, the entire recruitment pipeline is merit-based, lightning-fast, and monitored by the police department.",
     techPartner: "Technology Partner:",
     copyright: "© 2026 Siddipet Police Department. All rights reserved.",
-    helpdesk: "Helpdesk: 8712667100"
+    helpdesk: "Helpdesk: 8712539949",
+    termsTitle: "Disclaimer and Limitation of Liability",
+    termsAgreeBtn: "I agree to the terms and conditions",
+    termsList: [
+      "The Siddipet Police Udyogamithra youth Employment job Portal is only a facilitation platform for connecting job seekers and employers.",
+      "Siddipet Police Commissionerate and ApplyWizz Technologies Pvt. Ltd. do not guarantee employment, job placement, salary, service conditions, or selection of any candidate.",
+      "Verification of credentials, recruitment, appointment, salary payment, and service conditions shall be the sole responsibility of the concerned employer and candidate.",
+      "Siddipet Police Commissionerate shall not be responsible or liable for any employment-related disputes, fraud, misrepresentation, breach of contract, labour disputes, financial claims, or legal proceedings arising between employers and job seekers.",
+      "Any dispute arising between employers and job seekers shall be resolved by the concerned parties, and Siddipet Police Commissionerate shall not be made a party to such disputes.",
+      "This MoU does not create any employer-employee relationship between Siddipet Police Commissionerate, ApplyWizz Technologies Pvt. Ltd., employers, and job seekers."
+    ]
   },
   te: {
     policeTitle: "సిద్దిపేట పోలీస్",
@@ -88,13 +98,39 @@ const translations = {
     safeTransDesc: "అప్లైవిజ్ AI ద్వారా ఆధారితం, మొత్తం నియామక ప్రక్రియ ప్రతిభ-ఆధారితమైనది, అత్యంత వేగవంతమైనది మరియు పోలీస్ శాఖ ద్వారా పర్యవేక్షించబడుతుంది.",
     techPartner: "సాంకేతిక భాగస్వామి:",
     copyright: "© 2026 సిద్దిపేట పోలీస్ శాఖ. సర్వ హక్కులు ప్రత్యేకించబడినవి.",
-    helpdesk: "హెల్ప్‌డెస్క్: 100"
+    helpdesk: "హెల్ప్‌డెస్క్: 8712539949",
+    termsTitle: "నిరాకరణ మరియు బాధ్యత పరిమితి",
+    termsAgreeBtn: "నేను నిబంధనలు మరియు షరతులను అంగీకరిస్తున్నాను",
+    termsList: [
+      "సిద్దిపేట పోలీస్ ఉద్యోగమిత్ర యువ ఉపాధి జాబ్ పోర్టల్ అనేది ఉద్యోగార్థులు మరియు యజమానులను అనుసంధానించే కేవలం ఒక సులభతర వేదిక.",
+      "సిద్దిపేట పోలీస్ కమీషనరేట్ మరియు అప్లైవిజ్ టెక్నాలజీస్ ప్రైవేట్ లిమిటెడ్ ఎలాంటి ఉద్యోగం, జాబ్ ప్లేస్‌మెంట్, జీతం, సేవా నిబంధనలు లేదా ఏ అభ్యర్థి ఎంపికకు హామీ ఇవ్వవు.",
+      "వివరాల ధృవీకరణ, రిక్రూట్‌మెంట్, నియామకం, జీతం చెల్లింపు మరియు సేవా షరతులు సంబంధిత యజమాని మరియు అభ్యర్థి యొక్క పూర్తి బాధ్యత.",
+      "యజమానులు మరియు ఉద్యోగార్థుల మధ్య తలెత్తే ఏవైనా ఉపాధి సంబంధిత వివాదాలు, మోసం, తప్పుడు ప్రాతినిధ్యం, కాంట్రాక్ట్ ఉల్లంఘన, కార్మిక వివాదాలు, ఆర్థిక వాదనలు లేదా చట్టపరమైన చర్యలకు సిద్దిపేట పోలీస్ కమీషనరేట్ బాధ్యత వహించదు.",
+      "యజమానులు మరియు ఉద్యోగార్థుల మధ్య తలెత్తే ఏదైనా వివాదాన్ని సంబంధిత పార్టీలే పరిష్కరించుకోవాలి మరియు సిద్దిపేట పోలీస్ కమీషనరేట్‌ను అటువంటి వివాదాలకు భాగస్వామిగా చేయరాదు.",
+      "ఈ అవగాహన ఒప్పందం (MoU) సిద్దిపేట పోలీస్ కమీషనరేట్, అప్లైవిజ్ టెక్నాలజీస్ ప్రైవేట్ లిమిటెడ్, యజమానులు మరియు ఉద్యోగార్థుల మధ్య ఎలాంటి యజమాని-ఉద్యోగి సంబంధాన్ని సృష్టించదు."
+    ]
   }
 };
 
 function App() {
   const [lang, setLang] = useState('en');
+  const [showTermsModal, setShowTermsModal] = useState(false);
+  const [agreedTerms, setAgreedTerms] = useState(new Array(6).fill(false));
   const t = translations[lang];
+
+  const handleOpenTerms = (e) => {
+    e.preventDefault();
+    setShowTermsModal(true);
+    setAgreedTerms(new Array(6).fill(false));
+  };
+
+  const allAgreed = agreedTerms.every(term => term === true);
+
+  const handleAgreeAndProceed = () => {
+    if (allAgreed) {
+      window.location.href = "https://careers.applywizz.ai/signup";
+    }
+  };
 
   const toggleLanguage = () => {
     setLang(lang === 'en' ? 'te' : 'en');
@@ -148,7 +184,7 @@ function App() {
             <Globe size={18} /> {lang === 'en' ? 'తెలుగు' : 'English'}
           </button>
           <a href="https://careers.applywizz.ai/signup" className="btn btn-primary">{t.hrLogin}</a>
-          <a href="https://careers.applywizz.ai/signup" className="btn btn-accent">{t.jobSeekerSignUp}</a>
+          <button onClick={handleOpenTerms} className="btn btn-accent">{t.jobSeekerSignUp}</button>
         </div>
       </nav>
 
@@ -204,9 +240,9 @@ function App() {
             )}
           </p>
           <div className="hero-actions">
-            <a href="https://careers.applywizz.ai/signup" className="btn btn-accent">
+            <button onClick={handleOpenTerms} className="btn btn-accent">
               {t.registerBtn} <ArrowRight size={20} style={{ marginLeft: '8px' }} />
-            </a>
+            </button>
           </div>
         </div>
 
@@ -310,6 +346,9 @@ function App() {
               <a href="https://www.facebook.com/share/1HmzZ8JS2J/" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Facebook">
                 <FacebookIcon />
               </a>
+              <a href="mailto:siddipetpoliceudyogamitra@gmail.com" className="social-icon" aria-label="Email">
+                <Mail size={20} />
+              </a>
             </div>
           </div>
           <div>
@@ -317,6 +356,47 @@ function App() {
           </div>
         </div>
       </footer>
+
+      {/* Terms Modal */}
+      {showTermsModal && (
+        <div className="modal-overlay" onClick={() => setShowTermsModal(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setShowTermsModal(false)} aria-label="Close">
+              <X size={24} />
+            </button>
+            <h2>{t.termsTitle}</h2>
+            <div className="terms-list">
+              <ol>
+                {t.termsList.map((term, index) => (
+                  <li key={index} className="term-item">
+                    <label className="term-checkbox-label">
+                      <span>{term}</span>
+                      <input
+                        type="checkbox"
+                        checked={agreedTerms[index]}
+                        onChange={(e) => {
+                          const newTerms = [...agreedTerms];
+                          newTerms[index] = e.target.checked;
+                          setAgreedTerms(newTerms);
+                        }}
+                      />
+                    </label>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            <button
+              className={`btn ${allAgreed ? 'btn-accent' : 'btn-disabled'}`}
+              onClick={handleAgreeAndProceed}
+              disabled={!allAgreed}
+              style={{ width: '100%', padding: '1rem', fontSize: '1.05rem', marginTop: '1rem' }}
+            >
+              {t.termsAgreeBtn}
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
