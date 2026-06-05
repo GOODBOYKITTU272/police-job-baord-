@@ -26,6 +26,7 @@ const translations = {
     hrLogin: "HR / Company Login",
     jobSeekerSignUp: "Job Seeker Sign Up",
     initiative: "🤝 A SIDDIPET POLICE INITIATIVE",
+    portalSubtitle: "Youth employment job portal",
     heroTitle1: "Empowering Youth.",
     heroTitle2: "Securing Our Future.",
     heroDesc: "The Siddipet Police Department believes that true public service extends beyond safety—it means uplifting our community. Udyoga Mitra is our flagship initiative to connect local talent directly with prestigious career opportunities across India's top sectors.",
@@ -60,6 +61,7 @@ const translations = {
     hrLogin: "HR / కంపెనీ లాగిన్",
     jobSeekerSignUp: "ఉద్యోగార్థి సైన్ అప్",
     initiative: "🤝 ఒక సిద్దిపేట పోలీస్ చొరవ",
+    portalSubtitle: "యువత ఉపాధి జాబ్ పోర్టల్",
     heroTitle1: "యువత సాధికారత.",
     heroTitle2: "మన భవిష్యత్తుకు భద్రత.",
     heroDesc: "సిద్దిపేట పోలీస్ శాఖ నిజమైన ప్రజా సేవ భద్రతకు మించినదని నమ్ముతుంది—దీని అర్థం మన సమాజాన్ని ఉద్ధరించడం. భారతదేశపు అగ్రశ్రేణి రంగాలలో ప్రతిష్టాత్మకమైన కెరీర్ అవకాశాలతో స్థానిక ప్రతిభను నేరుగా అనుసంధానించే మా ప్రధాన చొరవ ఉద్యోగ మిత్ర.",
@@ -133,6 +135,7 @@ function App() {
                 <h1>{t.policeTitle}</h1>
                 <span>{t.udyogaMitra}</span>
               </div>
+              <span className="portal-subtitle">{t.portalSubtitle}</span>
             </div>
             <img src="/surakshalogo1.png" alt="Siddipet Police Logo" className="police-logo right-logo" />
           </div>

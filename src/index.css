@@ -121,6 +121,7 @@ h6 {
 
 
 .logo-text span {
+  font-family: 'Outfit', sans-serif;
   font-size: 1.6rem;
   font-weight: 900;
   letter-spacing: 1.5px;
@@ -129,6 +130,16 @@ h6 {
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   white-space: nowrap;
   margin: 0;
+}
+
+.portal-subtitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-gold);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  margin-top: 0.1rem;
 }
 
 .nav-actions {
@@ -651,7 +662,12 @@ footer {
   }
 
   .logo-text span {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .portal-subtitle {
+    font-size: 0.75rem;
     text-align: center;
   }
 
@@ -752,7 +768,12 @@ footer {
   }
 
   .logo-text span {
-    font-size: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .portal-subtitle {
+    font-size: 0.65rem;
+    text-align: center;
   }
 
   .initiative-top-text {
