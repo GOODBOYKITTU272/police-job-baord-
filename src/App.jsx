@@ -338,8 +338,13 @@ function App() {
       {/* Footer */}
       <footer>
         <div className="footer-content">
-          <div className="powered-by">
-            {t.techPartner} <a href="https://www.applywizz.ai/" target="_blank" rel="noopener noreferrer">Applywizz AI</a>
+          <div className="powered-by" style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+            <div>
+              {t.techPartner} <a href="https://www.applywizz.ai/" target="_blank" rel="noopener noreferrer">Applywizz AI</a>
+            </div>
+            <a href="mailto:support@applywizz.ai" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.9rem' }}>
+              support@applywizz.ai
+            </a>
           </div>
           <div className="footer-center">
             <div>
@@ -361,7 +366,7 @@ function App() {
             </div>
           </div>
           <div>
-            {t.helpdesk} | support@applywizz.ai
+            {t.helpdesk}
           </div>
         </div>
       </footer>
