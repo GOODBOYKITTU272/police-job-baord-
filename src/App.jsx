@@ -130,7 +130,7 @@ function App() {
 
   const handleAgreeAndProceed = () => {
     if (allAgreed) {
-      window.location.href = "https://careers.applywizz.ai/signup";
+     window.location.href = "https://careers.applywizz.ai/signup?source=siddipet-police";
     }
   };
 
@@ -185,7 +185,7 @@ function App() {
           >
             <Globe size={18} /> {lang === 'en' ? 'తెలుగు' : 'English'}
           </button>
-          <a href="https://careers.applywizz.ai/signup" className="btn btn-primary">{t.hrLogin}</a>
+          <a href="https://careers.applywizz.ai/signup?source=siddipet-police" className="btn btn-primary">{t.hrLogin}</a>
           <button onClick={handleOpenTerms} className="btn btn-accent">{t.jobSeekerSignUp}</button>
         </div>
       </nav>
